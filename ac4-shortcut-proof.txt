@@ -1,1 +1,0 @@
-SWAT-1 AC4 shortcut-path fixture for TNM-717 (staging proof of PR #1615). Safe to delete.
