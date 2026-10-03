@@ -1,7 +1,0 @@
-pipeline:
-  name: mh-invalid
-  agent_backend: definitely-not-a-backend
-stages:
-  - name: one
-    prompt: 42
-    unknown_key: true
