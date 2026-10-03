@@ -1,0 +1,12 @@
+# Acceptance fixture (TNM-774 / SHIP-994): a pipeline config that does not meet
+# the pipeline contract, so Ship can show how it refuses one. Removed right after.
+version: "1.0"
+
+project:
+  name: "ship-a-website — broken on purpose"
+
+pipeline:
+  auto_continue: false
+  agent_backend: not-a-backend
+
+stages: []
