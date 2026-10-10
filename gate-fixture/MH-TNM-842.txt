@@ -1,0 +1,1 @@
+Done gate negative-case fixture, TNM-842. Never merge.
