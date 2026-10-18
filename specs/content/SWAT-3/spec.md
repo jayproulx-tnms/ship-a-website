@@ -2,12 +2,12 @@
 
 **Work item:** Add a short FAQ section to the home page
 **Inputs:** `specs/content/SWAT-3/audit.md`, SWAT-3 work item
-**Date:** 2026-10-17
+**Date:** 2026-10-18 (re-run; checked against the 2026-10-18 audit)
 
 ## Summary
 
 The audit found that the FAQ section asked for in SWAT-3 is **already in
-`src/pages/index.astro` (lines 125–151)**. Earlier SWAT-3 runs merged it (`a4b35d7`, `2d91af5`, `24050dd`), and it is already on `main`: `git diff main -- src/ public/` is empty.
+`src/pages/index.astro` (lines 125–151)**. Earlier SWAT-3 runs merged it (`a4b35d7`, `2d91af5`, `24050dd`, `516f057`), and it is already on `main`: `git diff main -- src/ public/` is empty.
 It already meets the content requirements of every acceptance criterion.
 
 This run therefore needs **no source edits**. The implementation stage must
