@@ -2,11 +2,11 @@
 
 **Work item:** Add a short FAQ section to the home page
 **Stage:** Audit (read-only — no site edits made)
-**Date:** 2026-10-18 (re-run; replaces the 2026-10-17 audit)
+**Date:** 2026-10-20 (re-run; replaces the 2026-10-18 audit)
 
 ## Key finding: the FAQ section is already on the page
 
-Earlier SWAT-3 runs were merged to this branch (`a4b35d7`, `2d91af5`, `24050dd`, `516f057`).
+Earlier SWAT-3 runs were merged to this branch (`a4b35d7`, `2d91af5`, `24050dd`, `516f057`, `c41ba49`).
 `src/pages/index.astro` (lines 125–151) already contains a section that meets the acceptance criteria:
 
 - `<Section variant="sunken" kicker={{ num: '04', label: 'FAQ' }} heading="Frequently asked questions" id="faq">`
@@ -46,9 +46,9 @@ Add entries with source_file: 'src/pages/index.astro' to track this page.
 
 | Location | Element | Status |
 |---|---|---|
-| `PageHero` primary CTA ("Read the docs") | `<a>` in `PageHero.astro:92` | ✅ Gets the default `hero-cta-primary` |
-| `PageHero` secondary CTA ("View on GitHub") | `<a>` in `PageHero.astro:99` | ✅ Gets the default `hero-cta-secondary` |
-| `CtaStrip` primary CTA ("Get the template") | `<a>` in `CtaStrip.astro:164` | ✅ Gets the default `cta-strip-primary` |
+| `PageHero` primary CTA ("Read the docs") | `<a>` in `PageHero.astro:90–92` | ✅ Gets the default `hero-cta-primary` |
+| `PageHero` secondary CTA ("View on GitHub") | `<a>` in `PageHero.astro:97–99` | ✅ Gets the default `hero-cta-secondary` |
+| `CtaStrip` primary CTA ("Get the template") | `<a>` in `CtaStrip.astro:55–57` | ✅ Gets the default `cta-strip-primary` |
 | Inline "About" link, Get started step 4 | `index.astro:108` `<a href={`${base}about`}>` | ❌ **Missing `data-analytics-id`** (existed before SWAT-3) |
 | FAQ section | No links or CTAs | ✅ Nothing to tag |
 
