@@ -2,20 +2,20 @@
 
 **Work item:** Add a short FAQ section to the home page
 **Stage:** Audit (read-only; no site edits made)
-**Date:** 2026-10-20 (re-run; replaces the earlier 2026-10-20 audit)
+**Date:** 2026-10-21 (re-run; replaces the 2026-10-20 audit)
 
 ## Key finding: the FAQ section is already on the page
 
-Earlier SWAT-3 runs have already been merged: `a4b35d7` (#10), `2d91af5` (#11), `24050dd` (#12),
-`516f057` (#13), `c41ba49` (#14) and, most recently, `c3e7435` "[SWAT-3] Add a short FAQ section to
-the home page (#16)". `swat-3` and `main` point at the same history: each is an ancestor of the other,
-and `git diff main -- src/ public/` is empty.
+Earlier SWAT-3 runs have been merged into `main`: `a4b35d7` (#10), `2d91af5` (#11), `24050dd` (#12),
+and later `516f057` (#13), `c41ba49` (#14), `c3e7435` (#16). The most recent commit to change
+`src/pages/index.astro` is `24050dd` (#12). `swat-3` and `main` point at the same commit
+(each is an ancestor of the other), and `git diff main -- src/ public/` is empty.
 
 `src/pages/index.astro` (lines 125–151) already has a section that meets the acceptance criteria:
 
 - `<Section variant="sunken" kicker={{ num: '04', label: 'FAQ' }} heading="Frequently asked questions" id="faq">`
 - It comes after the existing content (Hero → 01 What you get → 02 Get started → 03 About) and just before the closing `CtaStrip` (line 153).
-- It has exactly three questions (`<h3>`). Each has a two-sentence answer in plain language:
+- It has exactly three questions (`<h3>`). Each has a two-sentence answer in plain language about the project:
   1. What is ship-a-website?
   2. What is TNMS Ship?
   3. How do I get started?
@@ -29,7 +29,7 @@ They must not add a second FAQ section.
 |---|---|---|
 | `src/pages/index.astro` | Home page (`/`), holds the FAQ section | None to meet the AC; verify only |
 
-No other pages, content collections or components are involved.
+No other pages, content collections (`src/content/` holds only `design-system/`) or components are involved.
 
 ## Keyword zone gaps
 
@@ -41,8 +41,14 @@ No keywords in src/seo/keywords.ts are mapped to: src/pages/index.astro
 Add entries with source_file: 'src/pages/index.astro' to track this page.
 ```
 
+| Zone | Gap |
+|---|---|
+| Title (`Hello World`) | Can't be measured: no keywords are registered |
+| Description | Can't be measured: no keywords are registered |
+| Headings | Can't be measured: no keywords are registered |
+| Body | Can't be measured: no keywords are registered |
+
 - The `keywords` array in `src/seo/keywords.ts` is empty. It holds only a commented-out example.
-- **Title / description / headings / body gaps: none can be measured**, because no keywords are registered.
 - `npm run lint:seo` passes: `T1 keywords: 0/0 covered | 0 warning(s) | 0 error(s)`.
 - Recommendation (outside this item's scope): register home-page keywords in `src/seo/keywords.ts` so future audits can measure coverage.
 
@@ -69,10 +75,11 @@ SWAT-3. Track them as a separate item.
 ## Redirects
 
 None needed. No pages are moved, renamed or deleted. The FAQ is a section (`/#faq`) on an existing page.
+`public/_redirects` holds only comments, and nothing needs to be added.
 
 ## Summary for downstream stages
 
 - **Edits required for SWAT-3:** none. The FAQ section already exists and meets all three acceptance criteria.
 - **Verification to perform:** run `npm run lint` and `npm run build`, then confirm the FAQ renders below the existing sections.
 - **Out of scope, flag separately:** no home-page keywords registered; the inline About link (`index.astro:108`) has no analytics ID; the external GitHub CTAs have no UTM parameters.
-- **Note for oversight:** the work item asks for "a run that really delivers a change". That change was delivered by the earlier merged runs, most recently #16. Adding content now would duplicate the FAQ or break AC-3.
+- **Note for oversight:** the work item asks for "a run that really delivers a change". That change was delivered by earlier merged runs; the FAQ content was last changed in `24050dd` (#12). Adding content now would duplicate the FAQ or break AC-3.
