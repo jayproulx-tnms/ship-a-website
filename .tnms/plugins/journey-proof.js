@@ -58,18 +58,18 @@ const stopRun = (tk, message) => tk.stop(message);
 
 /* The journey fills this in: mode, nonce, and every line/file/message — see expectations.mjs. */
 const JOURNEY = {
-  "mode": "fail",
-  "nonce": "j20261021200020wpae",
+  "mode": "stop",
+  "nonce": "j2026102120031342my",
   "pluginName": "journey-proof",
-  "hello": "journey-proof says hello from my own repository (j20261021200020wpae)",
+  "hello": "journey-proof says hello from my own repository (j2026102120031342my)",
   "toolkitPrefix": "journey-proof was handed: ",
   "branchPrefix": "journey-proof is on branch: ",
   "variableName": "site_root",
   "variablePrefix": "journey-proof read site_root=",
-  "wroteFile": "journey-proof/j20261021200020wpae.txt",
+  "wroteFile": "journey-proof/j2026102120031342my.txt",
   "wrotePrefix": "journey-proof wrote: ",
-  "failMessage": "My plugin refused this stage on purpose (j20261021200020wpae)",
-  "stopMessage": "My plugin stopped this run on purpose (j20261021200020wpae)"
+  "failMessage": "My plugin refused this stage on purpose (j2026102120031342my)",
+  "stopMessage": "My plugin stopped this run on purpose (j2026102120031342my)"
 };
 
 /** Every member name the toolkit exposes, own and inherited — names only, never values. */
