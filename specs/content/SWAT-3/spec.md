@@ -2,14 +2,14 @@
 
 **Work item:** Add a short FAQ section to the home page
 **Inputs:** `specs/content/SWAT-3/audit.md`, SWAT-3 work item
-**Date:** 2026-10-20 (re-run; checked against the latest 2026-10-20 audit)
+**Date:** 2026-10-21 (re-run; checked against the 2026-10-21 audit)
 
 ## Summary
 
 The audit found that the FAQ section SWAT-3 asks for is **already in
 `src/pages/index.astro` (lines 125–151)**. Earlier SWAT-3 runs merged it: `a4b35d7` (#10), `2d91af5` (#11),
-`24050dd` (#12), `516f057` (#13), `c41ba49` (#14) and, most recently, `c3e7435` (#16).
-It is already on `main`: `git diff main -- src/ public/` is empty.
+`24050dd` (#12), and later `516f057` (#13), `c41ba49` (#14) and `c3e7435` (#16). The most recent
+commit to change `src/pages/index.astro` is `24050dd` (#12). It is already on `main`: `git diff main -- src/ public/` is empty.
 The existing section already meets the content requirements of every acceptance criterion.
 
 This run therefore needs **no source edits**. The implementation stage must not add, duplicate,
@@ -17,7 +17,7 @@ reword or move content. Its job is to check the existing section against the acc
 below and confirm the build passes.
 
 > Note for oversight: the work item says it should be "a run that really delivers a change".
-> Earlier merged runs delivered that change, most recently #16. Adding content now would either
+> Earlier merged runs delivered that change; the FAQ copy was last changed in `24050dd` (#12). Adding content now would either
 > duplicate the FAQ or break AC-3 ("the rest of the page renders exactly as before").
 > This run is a verification run.
 
@@ -33,7 +33,7 @@ None. The required copy already exists:
 | 3 | How do I get started? | Copy the project, add your own site name and details, and preview it on your computer. The "Get started" section above walks you through each step. | 2 |
 
 Container: `<Section variant="sunken" kicker={{ num: '04', label: 'FAQ' }} heading="Frequently asked questions" id="faq">`.
-It comes after section `03 About` (`id="about"`, line 118) and before the closing `<CtaStrip>` ("Ready to ship?", line 153).
+It comes after section `03 About` (`id="about"`, line 118) and before the closing `<CtaStrip>` ("Ready to ship?", lines 153–154).
 
 ### Updated copy
 None.
